@@ -1,68 +1,419 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Apply box-sizing: border-box to all elements */
+* {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Set default margin, padding, and background color for html and body */
+html,
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  background-color: #fff7ed;
+  font-family: "Inter", sans-serif;
+}
+
+/* Remove default styles for anchor tags */
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+/* Hide the scrollbar for WebKit browsers */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide the scrollbar for IE and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Ensure the site wrapper takes at least the full height of the viewport and set flexbox properties */
+.site-wrapper {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Style the header with a fixed height, center alignment, and padding */
+header {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  padding-block: 10px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+/* Style for the site logo inside the header */
+header .site-logo {
+  color: black;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+/* Style for active links */
+a.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}
+
+/* Style for links inside the header */
+header a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 600;
+  padding: 5px 20px;
+}
+
+/* Hover effect for links inside the header */
+header a:hover {
+  color: #161616;
+  text-decoration: underline;
+}
+
+/* Style for the login icon inside the header */
+header .login-icon {
+  height: 18px;
+  width: 18px;
+}
+
+/* Style for the login link inside the header */
+header .login-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Style for the navigation inside the header */
+nav {
+  display: flex;
+}
+
+/* Ensure the main content has a bottom margin */
+main {
+  margin-bottom: 84px;
+}
+
+/* Style for the footer with a fixed height, centered content, and background color */
+footer {
+  background-color: #161616;
+  color: #aaaaaa;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Style for link buttons */
+.link-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 0.75rem 1.375rem;
+  color: initial;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Style for back buttons */
+.back-button {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-left: 26px;
+}
+
+/* Hover effect for span inside back buttons */
+.back-button span:hover {
+  text-decoration: underline;
+}
+
+/* Hover effect for link buttons */
+.link-button:hover {
+  transform: translate(1px, 1px);
+}
+
+/*** HOME PAGE ***/
+
+/* Style for the home page container */
+.home-container {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), 
+      url("./assets/images/home-hero.png") no-repeat center center;
+  background-size: cover;
+  min-height: 350px;
+  color: white;
+  padding: 45px 23px;
+}
+
+/* Style for headings in the home page container */
+.home-container h1 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 42px;
+}
+
+/* Style for paragraphs in the home page container */
+.home-container p {
+  line-height: 24px;
+}
+
+/* Style for links in the home page container */
+.home-container a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff8c38;
+  border: none;
+  width: 100%;
+  margin-top: 27px;
+  padding-block: 0.75rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Hover effect for links in the home page container */
+.home-container a:hover {
+  transform: translate(1px, 1px);
+}
+
+/*** ABOUT PAGE ***/
+
+/* Style for the hero image on the about page */
+.about-hero-image {
+  max-width: 100%;
+}
+
+/* Style for the content container on the about page */
+.about-page-content {
+  padding-inline: 23px;
+  color: #161616;
+  margin-bottom: 55px;
+}
+
+/* Style for headings in the about page content */
+.about-page-content h1 {
+  line-height: 38px;
+}
+
+/* Style for paragraphs in the about page content */
+.about-page-content p {
+  line-height: 22px;
+}
+
+/* Style for the call-to-action section on the about page */
+.about-page-cta {
+  background-color: #ffcc8d;
+  color: #161616;
+  padding-inline: 32px;
+  padding-bottom: 32px;
+  margin-inline: 27px;
+  border-radius: 5px;
+}
+
+/* Style for headings in the about page call-to-action section */
+.about-page-cta h2 {
+  margin: 0;
+  padding-block: 37px;
+}
+
+/* Style for link buttons in the about page call-to-action section */
+.about-page-cta .link-button {
+  background-color: #161616;
+  color: white;
+  border-radius: 10px;
+}
+
+/*** VAN PAGES ***/
+
+/* Style for the van list container */
+.van-list-container {
+  padding-inline: 23px;
+}
+
+/* Style for the filter buttons in the van list */
+.van-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style for individual filter buttons in the van list */
+.van-list-filter-buttons > a {
+  margin-right: 15px;
+}
+
+/* Style for the van list grid */
+.van-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 34px;
+  margin-top: 57px;
+}
+
+/* Style for links in the van tiles */
+.van-tile a {
+  color: #161616;
+  text-decoration: none;
+}
+
+/* Style for images in the van tiles */
+.van-tile img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/* Style for buttons in the van list container */
+.van-list-container button {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Style for the van type buttons */
+.van-type {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffead0;
+  color: #4d4d4d;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect for van type buttons */
+.van-type:hover {
+  color: #ffead0;
+}
+
+/* Style for focused van type buttons */
+.van-type:focus {
+  outline: none;
+}
+
+/* Style for selected van type buttons */
+.van-type.selected {
+  color: #ffead0;
+}
+
+/* Hover and selected style for simple van type buttons */
+.van-type.simple:hover,
+.van-type.simple.selected {
+  background-color: #e17654;
+}
+
+/* Hover and selected style for rugged van type buttons */
+.van-type.rugged:hover,
+.van-type.rugged.selected {
+  background-color: #115e59;
+}
+
+/* Hover and selected style for luxury van type buttons */
+.van-type.luxury:hover,
+.van-type.luxury.selected {
+  background-color: #161616;
+}
+
+/* Style for clear filters button */
+.van-type.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+/* Style for icons with van type classes */
+i[class*="van-type-"] {
+  padding: 7px 14px;
+}
+
+/* Style for the van detail container */
+.van-detail-container {
+  padding-inline: 27px;
+}
+
+/* Style for the back button in the van detail container */
+.van-detail-container .back-button {
+  color: black;
+  text-decoration: none;
+}
+
+/* Style for the span inside the back button in the van detail container */
+.van-detail-container .back-button span {
+  text-decoration: underline;
+}
+
+/* Style for the van detail */
+.van-detail {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+}
+
+/* Style for images in the van detail */
+.van-detail img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Style for the van name in the van detail */
+.van-detail .name {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Style for the van type button in the van detail */
+.van-detail .van-type {
+  margin-top: 16px;
+  margin-bottom: 40px;
+  padding: 9px 19px;
+  font-weight: 600;
+}
+
+/* Style for the van price section in the van detail */
+.van-detail .price {
+  margin-bottom: 17px;
+}
+
+/* Style for the price value in the van detail */
+.van-detail .price span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Style for the rent button in the van detail */
+.van-detail button {
+  background-color: #ff8c38;
+  color: white;
+  width: 100%;
+  max-width: 400px;
+  padding-block: 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Hover effect for the rent button in the van detail */
+.van-detail button:hover {
+  transform: translate(1px, 1px);
 }
